@@ -1,0 +1,16 @@
+<form class="form-inline my-2 my-lg-0 d-inline-flex" (ngSubmit)="onSubmit(formSearch)" #formSearch="ngForm">
+    <input name="word" [(ngModel)]="searchWord" class="form-control mr-sm-2" type="search" placeholder="Rechercher"
+        aria-label="Search" (ngModelChange)="onSearchChange($event)">
+    <button [disabled]="formSearch.invalid" class="btn btn-outline-success my-2 my-sm-0 m-4" type="submit">
+        Rechercher
+    </button>
+</form>
+<div *ngIf="searchResults && searchResults.length > 0">
+    <p>Résultats de la recherche :</p>
+    <ul>
+        <li *ngFor="let pastry of searchResults">{{ pastry.name }}</li>
+    </ul>
+</div>
+<div *ngIf="!searchResults || searchResults.length === 0">
+    <br>
+</div>

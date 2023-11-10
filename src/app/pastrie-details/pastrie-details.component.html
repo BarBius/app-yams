@@ -1,0 +1,9 @@
+<p class="card-header">{{pastrie?.name}}</p>
+<img class="card-img-top" src={{pastrie?.url}}>
+<h5 class="card-title">{{pastrie?.ref}}</h5>
+<p class="card-text">{{pastrie?.description}}</p>
+<ul class="list-group" *ngFor="let ingredient of ingredientsList">
+    <li class="list-group-item">{{ingredient}}</li>
+</ul>
+
+<button class="btn btn-outline-primary"  *ngIf="enableChoiceBt" (click)="preference(pastrie?.id)">Choice</button>
