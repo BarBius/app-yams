@@ -19,7 +19,6 @@ export class SearchComponent {
         const searchWord = form.value.word;
         this.searchResults = this.pastrieService.getPastrieByName(searchWord);
       } else {
-        // Error
         console.log('Error');
       }
     }
